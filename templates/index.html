@@ -3,264 +3,359 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Crop Recommendation System</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <title>Crop Rotation Schedule Generator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2e7d32;
+            --secondary-color: #81c784;
+            --accent-color: #ffd54f;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        .hero-section {
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('/static/images/loam-soil.jpg');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            margin-bottom: 40px;
+        }
+
+        .nav-pills .nav-link {
+            color: var(--primary-color);
+        }
+
+        .nav-pills .nav-link.active {
+            background-color: var(--primary-color);
+        }
+
+        .card {
+            border: none;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--secondary-color);
+            padding-bottom: 10px;
+            margin-bottom: 20px;
+        }
+
+        .info-card {
+            background-color: #f8f9fa;
+            border-left: 4px solid var(--primary-color);
+            padding: 20px;
+            margin-bottom: 20px;
+        }
+
+        .crop-result {
+            background-color: #e8f5e9;
+            border-radius: 8px;
+            padding: 15px;
+            margin-bottom: 10px;
+        }
+
+        .footer {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 20px 0;
+            margin-top: 40px;
+        }
+    </style>
 </head>
 <body>
-    <div class="container">
-        <!-- Introduction Section -->
-        <section class="intro-section" style="background: linear-gradient(135deg, #e0f7fa 0%, #fffde4 100%); border-radius: 16px; box-shadow: 0 4px 24px rgba(0,0,0,0.07); padding: 2.5rem 2rem 2rem 2rem; margin-bottom: 2.5rem; text-align: center;">
-            <img src="{{ url_for('static', filename='images/loam-soil.jpg') }}" alt="Healthy Soil" style="width: 120px; height: 120px; object-fit: cover; border-radius: 50%; box-shadow: 0 2px 8px rgba(0,0,0,0.08); margin-bottom: 1rem;">
-            <h1 style="font-size: 2.5rem; font-weight: 700; color: #388e3c; margin-bottom: 0.5rem;">Welcome to the Philippine Crop Recommendation System</h1>
-            <p style="font-size: 1.2rem; color: #444; max-width: 700px; margin: 0 auto 1.2rem auto;">
-                Discover the best crops for your land! Our tool helps you match your soil's pH, type, and moisture to the most suitable crops for your region. Just enter your soil details below and get instant, science-backed recommendations for a healthier, more productive farm. <br><br>
-                <span style="color: #1976d2; font-weight: 500;">Why use crop recommendations?</span> <br>
-                Choosing the right crops for your soil improves yields, conserves resources, and keeps your land healthy year after year—just like crop rotation does for gardens. <br><br>
-                <span style="color: #388e3c;">Let's grow smarter, together!</span>
-            </p>
-        </section>
-        <!-- End Introduction Section -->
-
-        <h1>Philippine Crop Recommendation System</h1>
-
-        <div class="info-section">
-            <h2>Understanding Soil Types and Moisture Levels</h2>
-            
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>Soil Types</h3>
-                    <div class="soil-types">
-                        <div class="soil-type">
-                            <h4>Loamy Soil</h4>
-                            <img src="{{ url_for('static', filename='images/loam-soil.jpg') }}" alt="Loamy Soil" class="soil-image">
-                            <p>Loamy soil is considered ideal for most crops because it:</p>
-                            <ul>
-                                <li>Contains a balanced mixture of sand, silt, and clay</li>
-                                <li>Provides excellent drainage while retaining moisture</li>
-                                <li>Allows easy root penetration</li>
-                                <li>Rich in nutrients and organic matter</li>
-                            </ul>
-                        </div>
-
-                        <div class="soil-type">
-                            <h4>Sandy Soil</h4>
-                            <img src="{{ url_for('static', filename='images/sandy-soil.jpg') }}" alt="Sandy Soil" class="soil-image">
-                            <p>Sandy soil is light and well-aerated but has some limitations:</p>
-                            <ul>
-                                <li>Drains water quickly</li>
-                                <li>Warms up quickly in spring</li>
-                                <li>Lower in nutrients</li>
-                                <li>Requires frequent watering</li>
-                            </ul>
-                        </div>
-
-                        <div class="soil-type">
-                            <h4>Clay Soil</h4>
-                            <img src="{{ url_for('static', filename='images/clay-soil.jpg') }}" alt="Clay Soil" class="soil-image">
-                            <p>Clay soil is nutrient-rich but can be challenging:</p>
-                            <ul>
-                                <li>Retains water and nutrients well</li>
-                                <li>Can become compacted</li>
-                                <li>Slow to warm in spring</li>
-                                <li>Can be difficult for roots to penetrate</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="info-card">
-                    <h3>Moisture Levels</h3>
-                    <div class="moisture-levels">
-                        <div class="moisture-type">
-                            <h4>Dry Soil</h4>
-                            <img src="{{ url_for('static', filename='images/dry-soil.jpg') }}" alt="Dry Soil" class="moisture-image">
-                            <p>Characteristics of dry soil:</p>
-                            <ul>
-                                <li>Appears light in color</li>
-                                <li>Crumbly and loose texture</li>
-                                <li>Dusty when disturbed</li>
-                                <li>Water quickly drains through</li>
-                            </ul>
-                        </div>
-
-                        <div class="moisture-type">
-                            <h4>Moist Soil</h4>
-                            <img src="{{ url_for('static', filename='images/moist-soil.jpg') }}" alt="Moist Soil" class="moisture-image">
-                            <p>Ideal moisture level for most plants:</p>
-                            <ul>
-                                <li>Appears dark and rich in color</li>
-                                <li>Forms a ball when squeezed</li>
-                                <li>Breaks apart easily</li>
-                                <li>Perfect balance of water and air</li>
-                            </ul>
-                        </div>
-
-                        <div class="moisture-type">
-                            <h4>Wet Soil</h4>
-                            <img src="{{ url_for('static', filename='images/wet-soil.jpg') }}" alt="Wet Soil" class="moisture-image">
-                            <p>Signs of overly wet soil:</p>
-                            <ul>
-                                <li>Appears very dark and glossy</li>
-                                <li>Water pools on surface</li>
-                                <li>Sticky and moldable</li>
-                                <li>Limited air spaces for roots</li>
-                            </ul>
+    <!-- Hero Section -->
+    <div class="hero-section text-center">
+        <div class="container">
+            <h1 class="display-4 mb-4">Crop Rotation Schedule Generator</h1>
+            <p class="lead mb-4">Create a sustainable plan for rotating your crops each season. This tool helps you grow healthy plants and improve your soil.</p>
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="card bg-transparent border-light">
+                        <div class="card-body">
+                            <p class="mb-3">The Crop Rotation Schedule Generator is a comprehensive tool designed for both hobby farmers and small-scale gardeners who want to maximize their garden's potential. By implementing proper crop rotation, you can:</p>
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <ul class="text-start">
+                                        <li>Maintain soil fertility</li>
+                                        <li>Prevent pest infestations</li>
+                                        <li>Reduce disease outbreaks</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-6">
+                                    <ul class="text-start">
+                                        <li>Improve crop yields</li>
+                                        <li>Enhance soil structure</li>
+                                        <li>Promote biodiversity</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+            <p class="small mt-4">Created by: Jill Louisse E. Dionela and Glonie G. Layan</p>
+            <p class="small">Last Updated: May 21, 2025</p>
         </div>
-
-        <div class="form-container">
-            <h2>Enter Your Soil Parameters</h2>
-            {% with messages = get_flashed_messages(with_categories=true) %}
-                {% if messages %}
-                    {% for category, message in messages %}
-                        <div class="alert alert-{{ category }}">
-                            {{ message }}
-                        </div>
-                    {% endfor %}
-                {% endif %}
-            {% endwith %}
-            <form method="POST" action="/">
-                <div class="form-group">
-                    <label for="ph">Soil pH ({{ min_ph }} - {{ max_ph }}):</label>
-                    <input type="number" step="0.1" name="ph" id="ph" value="{{ request.form.ph or '' }}" required min="{{ min_ph }}" max="{{ max_ph }}">
-                    <div class="input-help">
-                        <p>pH measures soil acidity. Enter a value between {{ min_ph }} and {{ max_ph }} for best results.</p>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label for="soil_type">Soil Type:</label>
-                    <select name="soil_type" id="soil_type" required>
-                        <option value="">Select Soil Type</option>
-                        <option value="loam" {% if request.form.soil_type == 'loam' %}selected{% endif %}>Loam</option>
-                        <option value="sandy" {% if request.form.soil_type == 'sandy' %}selected{% endif %}>Sandy</option>
-                        <option value="clay" {% if request.form.soil_type == 'clay' %}selected{% endif %}>Clay</option>
-                    </select>
-                </div>
-
-                <div class="form-group">
-                    <label for="moisture">Soil Moisture Level:</label>
-                    <select name="moisture" id="moisture" required>
-                        <option value="">Select Moisture Level</option>
-                        <option value="dry" {% if request.form.moisture == 'dry' %}selected{% endif %}>Dry (30–50%)</option>
-                        <option value="moist" {% if request.form.moisture == 'moist' %}selected{% endif %}>Moist (50–70%)</option>
-                        <option value="wet" {% if request.form.moisture == 'wet' %}selected{% endif %}>Wet (70–90%)</option>
-                    </select>
-                </div>
-
-                <div class="button-group">
-                    <button type="submit">Get Recommendations</button>
-                    <button type="submit" name="exit" value="1">Exit</button>
-                </div>
-            </form>
-        </div>
-
-        {% if crops %}
-            <h2>Recommended Crops</h2>
-            <div class="results-container">
-                {% for crop in crops %}
-                <div class="crop-card">
-                    <h3>{{ crop.crop }}</h3>
-                    <div class="crop-details">
-                        <div class="detail-group">
-                            <h4>Growing Conditions</h4>
-                            <ul>
-                                <li>pH Range: {{ crop.pH_min }} – {{ crop.pH_max }}</li>
-                                <li>Soil Type: {{ crop.soil_type.capitalize() }}</li>
-                                <li>Moisture Level: {{ crop.moisture_level.capitalize() }}</li>
-                                {% if crop.sunlight is defined %}
-                                <li>Sunlight Requirement: {{ crop.sunlight.capitalize() }}</li>
-                                {% endif %}
-                                {% if crop.water_requirement is defined %}
-                                <li>Water Requirement: {{ crop.water_requirement }}</li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                        {% if crop.planting_season is defined or crop.spacing is defined or crop.yield_per_hectare is defined or crop.pest_resistance is defined %}
-                        <div class="detail-group">
-                            <h4>Planting Information</h4>
-                            <ul>
-                                {% if crop.planting_season is defined %}
-                                <li>Best Planting Season: {{ ", ".join(crop.planting_season) }}</li>
-                                {% endif %}
-                                {% if crop.spacing is defined %}
-                                <li>Plant Spacing: {{ crop.spacing.between_plants }} × {{ crop.spacing.between_rows }}</li>
-                                {% endif %}
-                                {% if crop.yield_per_hectare is defined %}
-                                <li>Expected Yield: {{ crop.yield_per_hectare }} per hectare</li>
-                                {% endif %}
-                                {% if crop.pest_resistance is defined %}
-                                <li>Pest Resistance: {{ crop.pest_resistance.capitalize() }}</li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                        {% endif %}
-                        {% if crop.fertilizer_needs is defined %}
-                        <div class="detail-group">
-                            <h4>Fertilizer Requirements</h4>
-                            <ul>
-                                <li>Nitrogen: {{ crop.fertilizer_needs.nitrogen.capitalize() }}</li>
-                                <li>Phosphorus: {{ crop.fertilizer_needs.phosphorus.capitalize() }}</li>
-                                <li>Potassium: {{ crop.fertilizer_needs.potassium.capitalize() }}</li>
-                            </ul>
-                        </div>
-                        {% endif %}
-                        <div class="detail-group">
-                            <h4>Timeline</h4>
-                            <ul>
-                                <li>Growing Duration: {{ crop.duration_days }} days</li>
-                                <li>Expected Harvest: {{ crop.harvest_date }}</li>
-                            </ul>
-                        </div>
-                        <div class="detail-group">
-                            <h4>Growing Tips</h4>
-                            <ul>
-                                {% if crop.soil_type == 'loam' %}
-                                <li>Ideal for most crops due to balanced drainage and nutrient retention</li>
-                                <li>Regular watering and moderate fertilization recommended</li>
-                                {% elif crop.soil_type == 'sandy' %}
-                                <li>Water more frequently due to quick drainage</li>
-                                <li>Add organic matter to improve nutrient retention</li>
-                                {% elif crop.soil_type == 'clay' %}
-                                <li>Improve drainage by adding organic matter</li>
-                                <li>Avoid overwatering to prevent waterlogging</li>
-                                {% endif %}
-                                
-                                {% if crop.moisture_level == 'dry' %}
-                                <li>Monitor soil moisture carefully</li>
-                                <li>Consider mulching to retain moisture</li>
-                                {% elif crop.moisture_level == 'moist' %}
-                                <li>Maintain consistent moisture levels</li>
-                                <li>Water when top inch of soil feels dry</li>
-                                {% elif crop.moisture_level == 'wet' %}
-                                <li>Ensure good drainage to prevent root rot</li>
-                                <li>Monitor for signs of overwatering</li>
-                                {% endif %}
-
-                                {% if crop.fertilizer_needs is defined and crop.fertilizer_needs.nitrogen == 'high' %}
-                                <li>Apply nitrogen-rich fertilizers regularly</li>
-                                {% endif %}
-                                
-                                {% if crop.pest_resistance is defined and crop.pest_resistance == 'low' %}
-                                <li>Regular monitoring for pests recommended</li>
-                                <li>Consider implementing pest control measures</li>
-                                {% endif %}
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                {% endfor %}
-            </div>
-        {% elif request.method == 'POST' %}
-            <div class="error-message">
-                <strong>No matching crops found for your input.</strong>
-                <p>Please try different soil parameters.</p>
-            </div>
-        {% endif %}
     </div>
+
+    <div class="container">
+        <!-- Table of Contents -->
+        <div class="row mb-5">
+            <div class="col-md-3">
+                <div class="card">
+                    <div class="card-header bg-success text-white">
+                        <h5 class="mb-0">Table of Contents</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
+                            <a class="nav-link active" href="#about" data-bs-toggle="pill">About Crop Rotation</a>
+                            <a class="nav-link" href="#soil-ph" data-bs-toggle="pill">Soil pH</a>
+                            <a class="nav-link" href="#soil-type" data-bs-toggle="pill">Soil Type</a>
+                            <a class="nav-link" href="#moisture" data-bs-toggle="pill">Moisture Level</a>
+                            <a class="nav-link" href="#crop-types" data-bs-toggle="pill">Crop Types</a>
+                            <a class="nav-link" href="#climate" data-bs-toggle="pill">Climate Factors</a>
+                            <a class="nav-link" href="#generator" data-bs-toggle="pill">Crop Generator</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Content Sections -->
+            <div class="col-md-9">
+                <div class="tab-content" id="v-pills-tabContent">
+                    <!-- About Section -->
+                    <div class="tab-pane fade show active" id="about">
+                        <h2 class="section-title">About Crop Rotation</h2>
+                        <div class="info-card">
+                            <h4>What is Crop Rotation?</h4>
+                            <p>Crop rotation is a systematic approach to growing different types of crops in the same area across different seasons. This practice helps maintain soil health, prevent pest and disease buildup, and improve crop yields.</p>
+                            
+                            <h4>Why is it Important?</h4>
+                            <ul>
+                                <li><strong>Improves soil fertility and structure:</strong> Different crops have different nutrient needs and root structures, helping maintain balanced soil composition.</li>
+                                <li><strong>Reduces soil erosion:</strong> Deep-rooted crops help break up compacted soil and improve water infiltration.</li>
+                                <li><strong>Controls pests and diseases:</strong> Breaking the life cycle of pests and pathogens by changing crop types.</li>
+                                <li><strong>Increases crop yields:</strong> Healthier soil and reduced pest pressure lead to better harvests.</li>
+                                <li><strong>Promotes sustainable farming practices:</strong> Reduces the need for chemical inputs and supports natural ecosystem balance.</li>
+                            </ul>
+
+                            <h4>How Our Tool Helps You</h4>
+                            <p>Our Crop Rotation Schedule Generator makes it easy to:</p>
+                            <ul>
+                                <li><strong>Match crops to your soil conditions:</strong> Input your soil pH, type, and moisture level to get personalized recommendations.</li>
+                                <li><strong>Plan your growing seasons:</strong> Get a detailed schedule showing when to plant and harvest each crop.</li>
+                                <li><strong>Optimize crop combinations:</strong> Learn which crops work well together and which should be kept apart.</li>
+                                <li><strong>Track crop history:</strong> Keep records of what you've grown where, helping you maintain proper rotation cycles.</li>
+                            </ul>
+
+                            <div class="alert alert-success mt-4">
+                                <h5 class="alert-heading">Getting Started</h5>
+                                <p>To begin using the Crop Rotation Schedule Generator:</p>
+                                <ol>
+                                    <li>Test your soil pH using a soil testing kit</li>
+                                    <li>Determine your soil type (sandy, clay, loamy, or silt)</li>
+                                    <li>Assess your soil's moisture level</li>
+                                    <li>Enter these details in our generator to get your personalized crop rotation plan</li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Soil pH Section -->
+                    <div class="tab-pane fade" id="soil-ph">
+                        <h2 class="section-title">Soil pH</h2>
+                        <div class="info-card">
+                            <h4>What is Soil pH?</h4>
+                            <p>Soil pH is a measure of the acidity or alkalinity of soil, ranging from 0 (very acidic) to 14 (very alkaline), with 7 being neutral.</p>
+                            
+                            <h4>Why is it Important?</h4>
+                            <p>Soil pH affects nutrient availability to plants. Different crops have different pH requirements for optimal growth. Our tool helps you match crops with your soil's pH level.</p>
+                        </div>
+                    </div>
+
+                    <!-- Soil Type Section -->
+                    <div class="tab-pane fade" id="soil-type">
+                        <h2 class="section-title">Soil Type</h2>
+                        <div class="info-card">
+                            <h4>Types of Soil</h4>
+                            <p>Different soil types have different characteristics that affect crop growth:</p>
+                            <ul>
+                                <li><strong>Sandy Soil:</strong> Well-draining but low in nutrients</li>
+                                <li><strong>Clay Soil:</strong> Rich in nutrients but poor drainage</li>
+                                <li><strong>Loamy Soil:</strong> Ideal balance of drainage and nutrients</li>
+                                <li><strong>Silt Soil:</strong> Fertile but can compact easily</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Moisture Level Section -->
+                    <div class="tab-pane fade" id="moisture">
+                        <h2 class="section-title">Moisture Level</h2>
+                        <div class="info-card">
+                            <h4>Understanding Soil Moisture</h4>
+                            <p>Soil moisture levels are crucial for crop growth and development. Different crops have different water requirements:</p>
+                            <ul>
+                                <li><strong>High Moisture:</strong> Suitable for rice, watercress</li>
+                                <li><strong>Medium Moisture:</strong> Ideal for most vegetables</li>
+                                <li><strong>Low Moisture:</strong> Perfect for drought-resistant crops</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Crop Types Section -->
+                    <div class="tab-pane fade" id="crop-types">
+                        <h2 class="section-title">Crop Types</h2>
+                        <div class="info-card">
+                            <h4>Understanding Different Crop Types</h4>
+                            <p>Crops can be categorized based on their characteristics and growing requirements:</p>
+                            <ul>
+                                <li><strong>Legumes:</strong> Fix nitrogen in soil</li>
+                                <li><strong>Root Crops:</strong> Break up compacted soil</li>
+                                <li><strong>Leafy Crops:</strong> Heavy feeders</li>
+                                <li><strong>Fruiting Crops:</strong> Moderate feeders</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Climate Factors Section -->
+                    <div class="tab-pane fade" id="climate">
+                        <h2 class="section-title">Climate Factors</h2>
+                        <div class="info-card">
+                            <h4>Climate Considerations</h4>
+                            <p>Climate plays a crucial role in crop selection and rotation:</p>
+                            <ul>
+                                <li><strong>Temperature:</strong> Affects growth rates and crop viability</li>
+                                <li><strong>Rainfall:</strong> Determines water availability</li>
+                                <li><strong>Season Length:</strong> Influences crop selection</li>
+                                <li><strong>Frost Dates:</strong> Critical for planting schedules</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- Crop Generator Section -->
+                    <div class="tab-pane fade" id="generator">
+                        <h2 class="section-title">Crop Rotation Generator</h2>
+                        <div class="card">
+                            <div class="card-body">
+                                <form method="POST" class="needs-validation" novalidate>
+                                    <div class="mb-3">
+                                        <label for="ph" class="form-label">Soil pH</label>
+                                        <input type="number" step="0.1" class="form-control" id="ph" name="ph" required min="{{ min_ph }}" max="{{ max_ph }}">
+                                        <div class="form-text">Enter a value between {{ min_ph }} and {{ max_ph }}</div>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="soil_type" class="form-label">Soil Type</label>
+                                        <select class="form-select" id="soil_type" name="soil_type" required>
+                                            <option value="">Select soil type...</option>
+                                            <option value="sandy">Sandy</option>
+                                            <option value="clay">Clay</option>
+                                            <option value="loamy">Loamy</option>
+                                            <option value="silt">Silt</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="mb-3">
+                                        <label for="moisture" class="form-label">Moisture Level</label>
+                                        <select class="form-select" id="moisture" name="moisture" required>
+                                            <option value="">Select moisture level...</option>
+                                            <option value="high">High</option>
+                                            <option value="medium">Medium</option>
+                                            <option value="low">Low</option>
+                                        </select>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-success">Generate Crop Recommendations</button>
+                                    <button type="submit" name="exit" class="btn btn-secondary">Exit</button>
+                                </form>
+
+                                {% if crops %}
+                                <div class="mt-4">
+                                    <h4>Recommended Crops:</h4>
+                                    {% for crop in crops %}
+                                    <div class="crop-result">
+                                        <h5>{{ crop.crop }}</h5>
+                                        <p><strong>Harvest Date:</strong> {{ crop.harvest_date }}</p>
+                                        <p><strong>Duration:</strong> {{ crop.duration_days }} days</p>
+                                        <p><strong>Crop Type:</strong> {{ crop.crop_type|title }}</p>
+                                        <p><strong>Climate Zone:</strong> {{ crop.climate_zone|title }}</p>
+                                    </div>
+                                    {% endfor %}
+
+                                    {% if rotation_schedule %}
+                                    <div class="mt-4">
+                                        <h4>Crop Rotation Schedule:</h4>
+                                        <div class="table-responsive">
+                                            <table class="table table-bordered">
+                                                <thead class="table-success">
+                                                    <tr>
+                                                        <th>Crop</th>
+                                                        <th>Planting Date</th>
+                                                        <th>Harvest Date</th>
+                                                        <th>Duration</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    {% for schedule in rotation_schedule %}
+                                                    <tr>
+                                                        <td>{{ schedule.crop }}</td>
+                                                        <td>{{ schedule.planting_date }}</td>
+                                                        <td>{{ schedule.harvest_date }}</td>
+                                                        <td>{{ schedule.duration_days }} days</td>
+                                                    </tr>
+                                                    {% endfor %}
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                    {% endif %}
+                                </div>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center">
+            <p>© 2025 Crop Rotation Schedule Generator. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Form validation
+        (function () {
+            'use strict'
+            var forms = document.querySelectorAll('.needs-validation')
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault()
+                        event.stopPropagation()
+                    }
+                    form.classList.add('was-validated')
+                }, false)
+            })
+        })()
+    </script>
 </body>
 </html>
 

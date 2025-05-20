@@ -6,6 +6,8 @@
         "soil_type": "clay",
         "moisture_level": "wet",
         "duration_days": 120,
+        "crop_type": "grain",
+        "climate_zone": "tropical",
         "planting_season": ["June-July", "December-January"],
         "spacing": {
             "between_plants": "20 cm",
@@ -28,6 +30,8 @@
         "soil_type": "loam",
         "moisture_level": "moist",
         "duration_days": 100,
+        "crop_type": "grain",
+        "climate_zone": "tropical",
         "planting_season": ["March-May", "September-November"],
         "spacing": {
             "between_plants": "30 cm",
@@ -50,6 +54,8 @@
         "soil_type": "loam",
         "moisture_level": "moist",
         "duration_days": 270,
+        "crop_type": "industrial",
+        "climate_zone": "tropical",
         "planting_season": ["October-December"],
         "spacing": {
             "between_plants": "30 cm",
@@ -72,6 +78,8 @@
         "soil_type": "loam",
         "moisture_level": "moist",
         "duration_days": 300,
+        "crop_type": "fruit",
+        "climate_zone": "tropical",
         "planting_season": ["Year-round"],
         "spacing": {
             "between_plants": "2.5 m",
@@ -94,6 +102,8 @@
         "soil_type": "sandy",
         "moisture_level": "dry",
         "duration_days": 240,
+        "crop_type": "fruit",
+        "climate_zone": "tropical",
         "planting_season": ["Year-round"],
         "spacing": {
             "between_plants": "30 cm",
@@ -116,6 +126,8 @@
         "soil_type": "sandy",
         "moisture_level": "dry",
         "duration_days": 210,
+        "crop_type": "root",
+        "climate_zone": "tropical",
         "planting_season": ["Year-round"],
         "spacing": {
             "between_plants": "1 m",
@@ -138,6 +150,8 @@
         "soil_type": "loam",
         "moisture_level": "moist",
         "duration_days": 120,
+        "crop_type": "root",
+        "climate_zone": "tropical",
         "planting_season": ["Year-round"],
         "spacing": {
             "between_plants": "30 cm",
@@ -160,6 +174,8 @@
         "soil_type": "clay",
         "moisture_level": "wet",
         "duration_days": 180,
+        "crop_type": "root",
+        "climate_zone": "tropical",
         "planting_season": ["Year-round"],
         "spacing": {
             "between_plants": "50 cm",
@@ -182,6 +198,8 @@
         "soil_type": "loam",
         "moisture_level": "moist",
         "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
         "planting_season": ["October-February"],
         "spacing": {
             "between_plants": "45 cm",
