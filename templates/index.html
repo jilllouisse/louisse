@@ -257,6 +257,43 @@
                 margin-bottom: 20px;
             }
         }
+
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover .card-img-top {
+            transform: scale(1.05);
+        }
+
+        .crop-card {
+            overflow: hidden;
+            border-radius: 15px;
+            box-shadow: var(--card-shadow);
+            transition: all 0.3s ease;
+        }
+
+        .crop-card:hover {
+            box-shadow: var(--hover-shadow);
+            transform: translateY(-5px);
+        }
+
+        .crop-card .card-body {
+            padding: 1.5rem;
+        }
+
+        .crop-card .card-title {
+            color: var(--primary-color);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .crop-card .card-text {
+            color: var(--text-color);
+            font-size: 0.95rem;
+        }
     </style>
 </head>
 <body>
@@ -291,7 +328,7 @@
                 </div>
             </div>
             <p class="small mt-4">Created by: Jill Louisse E. Dionela and Glonie G. Layan</p>
-            <p class="small">Last Updated: May 21, 2025</p>
+            <p class="small">Last Updated: March 2024</p>
         </div>
     </div>
 
@@ -305,7 +342,7 @@
                     </div>
                     <div class="card-body">
                         <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist">
-                            <a class="nav-link active" href="#about" data-bs-toggle="pill">About Crop Rotation</a>
+                            <a class="nav-link" href="#about" data-bs-toggle="pill">About Crop Rotation</a>
                             <a class="nav-link" href="#soil-ph" data-bs-toggle="pill">Soil pH</a>
                             <a class="nav-link" href="#soil-type" data-bs-toggle="pill">Soil Type</a>
                             <a class="nav-link" href="#moisture" data-bs-toggle="pill">Moisture Level</a>
@@ -321,7 +358,7 @@
             <div class="col-md-9">
                 <div class="tab-content" id="v-pills-tabContent">
                     <!-- About Section -->
-                    <div class="tab-pane fade show active" id="about">
+                    <div class="tab-pane fade" id="about">
                         <h2 class="section-title">About Crop Rotation</h2>
                         <div class="info-card">
                             <h4>What is Crop Rotation?</h4>
@@ -375,13 +412,111 @@
                         <h2 class="section-title">Soil Type</h2>
                         <div class="info-card">
                             <h4>Types of Soil</h4>
-                            <p>Different soil types have different characteristics that affect crop growth:</p>
-                            <ul>
-                                <li><strong>Sandy Soil:</strong> Well-draining but low in nutrients</li>
-                                <li><strong>Clay Soil:</strong> Rich in nutrients but poor drainage</li>
-                                <li><strong>Loamy Soil:</strong> Ideal balance of drainage and nutrients</li>
-                                <li><strong>Silt Soil:</strong> Fertile but can compact easily</li>
-                            </ul>
+                            <p>Different soil types have different characteristics that affect crop growth. Understanding your soil type is crucial for successful farming:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/sandy-soil.jpg" class="card-img-top" alt="Sandy Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Sandy Soil</h5>
+                                            <p class="card-text">Sandy soil is characterized by its large particles and gritty texture. It drains quickly and warms up fast in spring, making it ideal for early planting. However, it has low water and nutrient retention.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Root crops, carrots, potatoes, and drought-resistant plants.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/clay-soil.jpg" class="card-img-top" alt="Clay Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Clay Soil</h5>
+                                            <p class="card-text">Clay soil has very small particles that pack tightly together. It's rich in nutrients but has poor drainage and can be difficult to work with. It holds water well but can become compacted.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Rice, cabbage, and other moisture-loving crops.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/loam-soil.jpg" class="card-img-top" alt="Loamy Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Loamy Soil</h5>
+                                            <p class="card-text">Loamy soil is considered the ideal soil type. It's a balanced mixture of sand, silt, and clay, providing good drainage while retaining moisture and nutrients. It's easy to work with and suitable for most crops.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Most vegetables, fruits, and ornamental plants.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/wet-soil.jpg" class="card-img-top" alt="Silt Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Silt Soil</h5>
+                                            <p class="card-text">Silt soil has medium-sized particles and feels smooth to the touch. It's fertile and holds moisture well, but can compact easily. It's good for growing a wide variety of crops.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Most crops, especially those that need consistent moisture.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/clay-soil.jpg" class="card-img-top" alt="Volcanic Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Volcanic Soil</h5>
+                                            <p class="card-text">Volcanic soil is rich in minerals and nutrients from volcanic ash and lava. It's highly fertile and has excellent water retention. Common in areas near volcanoes in the Philippines.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Coffee, vegetables, and fruit trees. Particularly good for high-value crops.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/loam-soil.jpg" class="card-img-top" alt="Alluvial Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Alluvial Soil</h5>
+                                            <p class="card-text">Alluvial soil is found in river valleys and floodplains. It's rich in minerals and organic matter, with good drainage and fertility. Common in lowland areas of the Philippines.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Rice, corn, and other staple crops. Excellent for intensive farming.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/sandy-soil.jpg" class="card-img-top" alt="Limestone Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Limestone Soil</h5>
+                                            <p class="card-text">Limestone soil is alkaline and rich in calcium. It's well-draining and good for certain crops that prefer higher pH levels. Found in karst regions of the Philippines.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Mangoes, cashews, and other alkaline-loving crops.</p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/wet-soil.jpg" class="card-img-top" alt="Peat Soil" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Peat Soil</h5>
+                                            <p class="card-text">Peat soil is rich in organic matter and has high water retention. It's acidic and requires careful management. Found in some wetland areas of the Philippines.</p>
+                                            <p class="card-text"><strong>Best for:</strong> Acid-loving plants, certain vegetables, and ornamental plants.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-success mt-4">
+                                <h5 class="alert-heading">Soil Type Identification Tips</h5>
+                                <ul class="mb-0">
+                                    <li><strong>Sandy Soil:</strong> Feels gritty, won't form a ball when wet</li>
+                                    <li><strong>Clay Soil:</strong> Sticky when wet, forms hard clods when dry</li>
+                                    <li><strong>Loamy Soil:</strong> Smooth texture, forms a ball that crumbles easily</li>
+                                    <li><strong>Silt Soil:</strong> Smooth and silky, holds together when wet</li>
+                                    <li><strong>Volcanic Soil:</strong> Dark color, rich in minerals, feels light and porous</li>
+                                    <li><strong>Alluvial Soil:</strong> Dark brown to black, rich in organic matter</li>
+                                    <li><strong>Limestone Soil:</strong> Light colored, alkaline, often stony</li>
+                                    <li><strong>Peat Soil:</strong> Dark brown to black, spongy texture, acidic</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -390,12 +525,115 @@
                         <h2 class="section-title">Moisture Level</h2>
                         <div class="info-card">
                             <h4>Understanding Soil Moisture</h4>
-                            <p>Soil moisture levels are crucial for crop growth and development. Different crops have different water requirements:</p>
-                            <ul>
-                                <li><strong>High Moisture:</strong> Suitable for rice, watercress</li>
-                                <li><strong>Medium Moisture:</strong> Ideal for most vegetables</li>
-                                <li><strong>Low Moisture:</strong> Perfect for drought-resistant crops</li>
-                            </ul>
+                            <p>Soil moisture is crucial for plant growth and development. Different crops have different water requirements, and understanding your soil's moisture level helps in selecting the right crops and implementing proper irrigation practices.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-4 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/wet-soil.jpg" class="card-img-top" alt="High Moisture" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">High Moisture</h5>
+                                            <p class="card-text">Soil that is consistently wet or waterlogged. This type of soil retains water for extended periods and may have poor drainage.</p>
+                                            <p class="card-text"><strong>Characteristics:</strong></p>
+                                            <ul>
+                                                <li>Feels wet to the touch</li>
+                                                <li>Water pools on surface</li>
+                                                <li>Poor aeration</li>
+                                                <li>May have standing water</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Best for:</strong></p>
+                                            <ul>
+                                                <li>Rice (paddy)</li>
+                                                <li>Watercress</li>
+                                                <li>Taro (Gabi)</li>
+                                                <li>Water spinach (Kangkong)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/moist-soil.jpg" class="card-img-top" alt="Medium Moisture" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Medium Moisture</h5>
+                                            <p class="card-text">Soil that maintains a balanced moisture level, neither too wet nor too dry. This is the ideal condition for most crops.</p>
+                                            <p class="card-text"><strong>Characteristics:</strong></p>
+                                            <ul>
+                                                <li>Feels damp but not wet</li>
+                                                <li>Good water retention</li>
+                                                <li>Well-draining</li>
+                                                <li>Good aeration</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Best for:</strong></p>
+                                            <ul>
+                                                <li>Most vegetables</li>
+                                                <li>Fruit trees</li>
+                                                <li>Legumes</li>
+                                                <li>Herbs</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-4 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="/static/images/crops/dry-soil.jpg" class="card-img-top" alt="Low Moisture" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Low Moisture</h5>
+                                            <p class="card-text">Soil that dries out quickly and requires frequent irrigation. This type of soil is well-draining but may need water management.</p>
+                                            <p class="card-text"><strong>Characteristics:</strong></p>
+                                            <ul>
+                                                <li>Feels dry to the touch</li>
+                                                <li>Quick drainage</li>
+                                                <li>Good aeration</li>
+                                                <li>May crack when very dry</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Best for:</strong></p>
+                                            <ul>
+                                                <li>Drought-resistant crops</li>
+                                                <li>Root vegetables</li>
+                                                <li>Succulents</li>
+                                                <li>Mediterranean herbs</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-success mt-4">
+                                <h5 class="alert-heading">Moisture Management Tips</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>For High Moisture Soils:</h6>
+                                        <ul>
+                                            <li>Improve drainage with organic matter</li>
+                                            <li>Create raised beds</li>
+                                            <li>Use water-loving crops</li>
+                                            <li>Monitor for waterlogging</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>For Low Moisture Soils:</h6>
+                                        <ul>
+                                            <li>Add organic matter to improve water retention</li>
+                                            <li>Use mulch to reduce evaporation</li>
+                                            <li>Implement drip irrigation</li>
+                                            <li>Choose drought-resistant varieties</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mt-4">
+                                <h5 class="alert-heading">Seasonal Considerations</h5>
+                                <p>In the Philippines, soil moisture levels can vary significantly between seasons:</p>
+                                <ul>
+                                    <li><strong>Dry Season (March to May):</strong> Focus on drought-resistant crops and implement water conservation techniques</li>
+                                    <li><strong>Wet Season (June to October):</strong> Choose water-tolerant crops and ensure proper drainage</li>
+                                    <li><strong>Transition Periods:</strong> Monitor soil moisture closely and adjust crop selection accordingly</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -404,13 +642,188 @@
                         <h2 class="section-title">Crop Types</h2>
                         <div class="info-card">
                             <h4>Understanding Different Crop Types</h4>
-                            <p>Crops can be categorized based on their characteristics and growing requirements:</p>
-                            <ul>
-                                <li><strong>Legumes:</strong> Fix nitrogen in soil</li>
-                                <li><strong>Root Crops:</strong> Break up compacted soil</li>
-                                <li><strong>Leafy Crops:</strong> Heavy feeders</li>
-                                <li><strong>Fruiting Crops:</strong> Moderate feeders</li>
-                            </ul>
+                            <p>Crops can be categorized based on their characteristics, growing requirements, and nutritional needs. Understanding these categories helps in planning effective crop rotation and maintaining soil health.</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="https://conteudo.imguol.com.br/c/entretenimento/fa/2019/04/18/legumes-e-verduras-1555620381375_v2_1254x836.jpg" class="card-img-top" alt="Legumes (Nitrogen Fixers)" onerror="this.src='/static/images/loam-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Legumes (Nitrogen Fixers)</h5>
+                                            <p class="card-text">Legumes have the unique ability to fix nitrogen in the soil, making them excellent for improving soil fertility.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Mung beans (Munggo)</li>
+                                                <li>String beans (Sitaw)</li>
+                                                <li>Peanuts (Mani)</li>
+                                                <li>Pigeon peas (Kadyos)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>Improves soil nitrogen levels</li>
+                                                <li>Reduces need for chemical fertilizers</li>
+                                                <li>Good for crop rotation</li>
+                                                <li>Provides protein-rich food</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="https://modernfarmer.com/wp-content/uploads/2019/08/shutterstock_750895588.jpg" class="card-img-top" alt="Root Crops" onerror="this.src='/static/images/sandy-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Root Crops</h5>
+                                            <p class="card-text">Root crops are excellent for breaking up compacted soil and are important staple foods in the Philippines.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Sweet potato (Kamote)</li>
+                                                <li>Cassava (Kamoteng kahoy)</li>
+                                                <li>Taro (Gabi)</li>
+                                                <li>Yam (Ube)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>Improves soil structure</li>
+                                                <li>Drought resistant</li>
+                                                <li>High yield potential</li>
+                                                <li>Good for food security</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="https://www.gardeningknowhow.com/wp-content/uploads/2021/03/leafy-greens.jpg" class="card-img-top" alt="Leafy Crops" onerror="this.src='/static/images/moist-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Leafy Crops</h5>
+                                            <p class="card-text">Leafy crops are heavy feeders that require rich soil and regular fertilization.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Water spinach (Kangkong)</li>
+                                                <li>Chinese cabbage (Pechay)</li>
+                                                <li>Malabar spinach (Alugbati)</li>
+                                                <li>Lettuce (Letsugas)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>Quick growing</li>
+                                                <li>High nutritional value</li>
+                                                <li>Good for intercropping</li>
+                                                <li>Multiple harvests possible</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <img src="https://www.zaytunafarm.com/wp-content/uploads/2017/04/Fruit-Harvest.jpg" class="card-img-top" alt="Fruiting Crops" onerror="this.src='/static/images/wet-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Fruiting Crops</h5>
+                                            <p class="card-text">Fruiting crops are moderate feeders that produce edible fruits and require balanced nutrition.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Tomato (Kamatis)</li>
+                                                <li>Eggplant (Talong)</li>
+                                                <li>Okra (Okra)</li>
+                                                <li>Chili (Sili)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>High market value</li>
+                                                <li>Good for home gardens</li>
+                                                <li>Multiple harvests</li>
+                                                <li>Versatile in cooking</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <img src="https://d2gg9evh47fn9z.cloudfront.net/1600px_COLOURBOX18369743.jpg" class="card-img-top" alt="Grains and Cereals" style="height: 200px; object-fit: cover;" onerror="this.src='/static/images/clay-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Grains and Cereals</h5>
+                                            <p class="card-text">Staple crops that form the basis of Filipino diet and agriculture.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Rice (Palay)</li>
+                                                <li>Corn (Mais)</li>
+                                                <li>Millet (Dawa)</li>
+                                                <li>Sorghum (Batad)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>Food security</li>
+                                                <li>Income generation</li>
+                                                <li>Cultural importance</li>
+                                                <li>Multiple uses</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card h-100">
+                                        <img src="https://wallpaperaccess.com/full/1466446.jpg" class="card-img-top" alt="Tropical Fruits" style="height: 200px; object-fit: cover;" onerror="this.src='/static/images/dry-soil.jpg'">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Tropical Fruits</h5>
+                                            <p class="card-text">Perennial crops that provide long-term benefits and are well-suited to Philippine climate.</p>
+                                            <p class="card-text"><strong>Philippine Examples:</strong></p>
+                                            <ul>
+                                                <li>Mango (Mangga)</li>
+                                                <li>Banana (Saging)</li>
+                                                <li>Papaya (Papaya)</li>
+                                                <li>Pineapple (Pinya)</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Benefits:</strong></p>
+                                            <ul>
+                                                <li>Long-term investment</li>
+                                                <li>Export potential</li>
+                                                <li>Shade provision</li>
+                                                <li>Soil conservation</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-success mt-4">
+                                <h5 class="alert-heading">Crop Rotation Tips</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <h6>Basic Rotation Principles:</h6>
+                                        <ul>
+                                            <li>Follow heavy feeders with light feeders</li>
+                                            <li>Include legumes in rotation</li>
+                                            <li>Alternate deep and shallow-rooted crops</li>
+                                            <li>Consider seasonal requirements</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h6>Philippine-Specific Considerations:</h6>
+                                        <ul>
+                                            <li>Plan around wet and dry seasons</li>
+                                            <li>Include traditional crops</li>
+                                            <li>Consider local market demands</li>
+                                            <li>Account for typhoon seasons</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mt-4">
+                                <h5 class="alert-heading">Intercropping Opportunities</h5>
+                                <p>Many Philippine crops work well together in intercropping systems:</p>
+                                <ul>
+                                    <li><strong>Corn + Beans:</strong> Traditional combination that maximizes space and nutrients</li>
+                                    <li><strong>Banana + Coffee:</strong> Provides shade and additional income</li>
+                                    <li><strong>Rice + Fish:</strong> Integrated farming system common in the Philippines</li>
+                                    <li><strong>Fruit Trees + Vegetables:</strong> Efficient use of space and resources</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -418,14 +831,65 @@
                     <div class="tab-pane fade" id="climate">
                         <h2 class="section-title">Climate Factors</h2>
                         <div class="info-card">
-                            <h4>Climate Considerations</h4>
-                            <p>Climate plays a crucial role in crop selection and rotation:</p>
-                            <ul>
-                                <li><strong>Temperature:</strong> Affects growth rates and crop viability</li>
-                                <li><strong>Rainfall:</strong> Determines water availability</li>
-                                <li><strong>Season Length:</strong> Influences crop selection</li>
-                                <li><strong>Frost Dates:</strong> Critical for planting schedules</li>
-                            </ul>
+                            <h4>Understanding Philippine Climate</h4>
+                            <p>The Philippines has a tropical climate with distinct wet and dry seasons. The country experiences two main seasons:</p>
+                            
+                            <div class="row mt-4">
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Dry Season (December to May)</h5>
+                                            <p class="card-text"><strong>Characteristics:</strong></p>
+                                            <ul>
+                                                <li>Average temperatures: 25-32°C</li>
+                                                <li>Low rainfall</li>
+                                                <li>High evaporation rates</li>
+                                                <li>Strong sunlight</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Recommended Crops:</strong></p>
+                                            <ul>
+                                                <li>Corn (Mais)</li>
+                                                <li>Mung beans (Munggo)</li>
+                                                <li>Peanuts (Mani)</li>
+                                                <li>Watermelon (Pakwan)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <div class="card-body">
+                                            <h5 class="card-title">Wet Season (June to November)</h5>
+                                            <p class="card-text"><strong>Characteristics:</strong></p>
+                                            <ul>
+                                                <li>Heavy rainfall</li>
+                                                <li>High humidity (80-90%)</li>
+                                                <li>Average temperatures: 24-30°C</li>
+                                                <li>Frequent typhoons</li>
+                                            </ul>
+                                            <p class="card-text"><strong>Recommended Crops:</strong></p>
+                                            <ul>
+                                                <li>Rice (Palay)</li>
+                                                <li>Sweet potato (Kamote)</li>
+                                                <li>Taro (Gabi)</li>
+                                                <li>Water spinach (Kangkong)</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="alert alert-info mt-4">
+                                <h5 class="alert-heading">Philippine Climate Types (PAGASA Classification)</h5>
+                                <p>The Philippines has four climate types that affect crop selection:</p>
+                                <ul>
+                                    <li><strong>Type I:</strong> Two pronounced seasons (dry and wet) - Western Luzon, Mindoro, Negros, Palawan</li>
+                                    <li><strong>Type II:</strong> No dry season, very pronounced wet season - Eastern Luzon, Eastern Mindanao</li>
+                                    <li><strong>Type III:</strong> Short dry season, not very pronounced wet season - Central Luzon, Western Mindanao</li>
+                                    <li><strong>Type IV:</strong> Rainfall distributed throughout the year - Central Visayas, Eastern Mindanao</li>
+                                </ul>
+                            </div>
                         </div>
                     </div>
 
@@ -434,7 +898,7 @@
                         <h2 class="section-title">Crop Rotation Generator</h2>
                         <div class="card">
                             <div class="card-body">
-                                <form method="POST" class="needs-validation" novalidate>
+                                <form method="POST" class="needs-validation" id="cropForm" novalidate>
                                     <div class="mb-3">
                                         <label for="ph" class="form-label">Soil pH</label>
                                         <input type="number" step="0.1" class="form-control" id="ph" name="ph" required min="{{ min_ph }}" max="{{ max_ph }}">
@@ -456,58 +920,32 @@
                                         <label for="moisture" class="form-label">Moisture Level</label>
                                         <select class="form-select" id="moisture" name="moisture" required>
                                             <option value="">Select moisture level...</option>
-                                            <option value="high">High</option>
-                                            <option value="medium">Medium</option>
-                                            <option value="low">Low</option>
+                                            <option value="high">High (Wet soil, good for water-loving crops)</option>
+                                            <option value="medium">Medium (Well-draining soil, good for most crops)</option>
+                                            <option value="low">Low (Dry soil, good for drought-resistant crops)</option>
                                         </select>
                                     </div>
 
+                                    <div class="mb-3">
+                                        <label for="crop_type" class="form-label">Crop Type</label>
+                                        <select class="form-select" id="crop_type" name="crop_type">
+                                            <option value="">All Crop Types</option>
+                                            <option value="fruit">Fruit Crops</option>
+                                            <option value="vegetable">Vegetable Crops</option>
+                                            <option value="root">Root Crops</option>
+                                            <option value="leafy">Leafy Crops</option>
+                                            <option value="grain">Grain Crops</option>
+                                            <option value="industrial">Industrial Crops</option>
+                                            <option value="legume">Legume Crops</option>
+                                        </select>
+                                        <div class="form-text">Select a specific crop type or leave as "All Crop Types" to see all matches</div>
+                                    </div>
+
                                     <button type="submit" class="btn btn-success">Generate Crop Recommendations</button>
-                                    <button type="submit" name="exit" class="btn btn-secondary">Exit</button>
+                                    <button type="button" class="btn btn-secondary" onclick="document.querySelector('form').reset();">Reset</button>
                                 </form>
 
-                                {% if crops %}
-                                <div class="mt-4">
-                                    <h4>Recommended Crops:</h4>
-                                    {% for crop in crops %}
-                                    <div class="crop-result">
-                                        <h5>{{ crop.crop }}</h5>
-                                        <p><strong>Harvest Date:</strong> {{ crop.harvest_date }}</p>
-                                        <p><strong>Duration:</strong> {{ crop.duration_days }} days</p>
-                                        <p><strong>Crop Type:</strong> {{ crop.crop_type|title }}</p>
-                                        <p><strong>Climate Zone:</strong> {{ crop.climate_zone|title }}</p>
-                                    </div>
-                                    {% endfor %}
-
-                                    {% if rotation_schedule %}
-                                    <div class="mt-4">
-                                        <h4>Crop Rotation Schedule:</h4>
-                                        <div class="table-responsive">
-                                            <table class="table table-bordered">
-                                                <thead class="table-success">
-                                                    <tr>
-                                                        <th>Crop</th>
-                                                        <th>Planting Date</th>
-                                                        <th>Harvest Date</th>
-                                                        <th>Duration</th>
-                                                    </tr>
-                                                </thead>
-                                                <tbody>
-                                                    {% for schedule in rotation_schedule %}
-                                                    <tr>
-                                                        <td>{{ schedule.crop }}</td>
-                                                        <td>{{ schedule.planting_date }}</td>
-                                                        <td>{{ schedule.harvest_date }}</td>
-                                                        <td>{{ schedule.duration_days }} days</td>
-                                                    </tr>
-                                                    {% endfor %}
-                                                </tbody>
-                                            </table>
-                                        </div>
-                                    </div>
-                                    {% endif %}
-                                </div>
-                                {% endif %}
+                                <div id="results" class="mt-4"></div>
                             </div>
                         </div>
                     </div>
@@ -525,20 +963,205 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        // Form validation
-        (function () {
-            'use strict'
-            var forms = document.querySelectorAll('.needs-validation')
-            Array.prototype.slice.call(forms).forEach(function (form) {
-                form.addEventListener('submit', function (event) {
-                    if (!form.checkValidity()) {
-                        event.preventDefault()
-                        event.stopPropagation()
-                    }
-                    form.classList.add('was-validated')
-                }, false)
+        // Form validation and submission
+        document.getElementById('cropForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            if (!this.checkValidity()) {
+                e.stopPropagation();
+                this.classList.add('was-validated');
+                return;
+            }
+
+            const formData = new FormData(this);
+            
+            // Show loading state
+            document.getElementById('results').innerHTML = `
+                <div class="text-center">
+                    <div class="spinner-border text-success" role="status">
+                        <span class="visually-hidden">Loading...</span>
+                    </div>
+                    <p class="mt-2">Generating crop recommendations...</p>
+                </div>
+            `;
+
+            fetch(window.location.href, {
+                method: 'POST',
+                body: formData,
+                headers: {
+                    'X-Requested-With': 'XMLHttpRequest'
+                }
             })
-        })()
+            .then(response => response.json())
+            .then(data => {
+                const resultsDiv = document.getElementById('results');
+                
+                if (data.crops && data.crops.length > 0) {
+                    // Show success message and crop cards
+                    resultsDiv.innerHTML = `
+                        <div class="alert alert-success mb-4">
+                            <h4 class="alert-heading"><i class="fas fa-check-circle me-2"></i>Found ${data.crops.length} Matching Crops!</h4>
+                            <p class="mb-0">Based on your soil pH of ${formData.get('ph')}, ${formData.get('soil_type')} soil type, and ${formData.get('moisture')} moisture level, we've found the following suitable crops for your conditions.</p>
+                        </div>
+                        <div class="row">
+                            ${data.crops.map(crop => `
+                                <div class="col-md-6 mb-4">
+                                    <div class="card crop-card h-100">
+                                        <div class="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                                            <h5 class="card-title mb-0" style="color: #FFD700; font-weight: bold; text-shadow: 1px 1px 2px rgba(0,0,0,0.5);">${crop.crop}</h5>
+                                            <div>
+                                                ${crop.crop_type ? `<span class="badge bg-light text-dark me-2">${crop.crop_type}</span>` : ''}
+                                                ${crop.climate_zone ? `<span class="badge bg-info text-white">${crop.climate_zone}</span>` : ''}
+                                            </div>
+                                        </div>
+                                        <div class="card-body">
+                                            <div class="crop-description mb-4">
+                                                <p class="card-text">${crop.description}</p>
+                                            </div>
+                                            
+                                            <div class="row">
+                                                <div class="col-md-6">
+                                                    <div class="benefits-section mb-4">
+                                                        <h6 class="text-success"><i class="fas fa-star"></i> Benefits</h6>
+                                                        <ul class="list-unstyled">
+                                                            ${crop.benefits.map(benefit => `
+                                                                <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> ${benefit}</li>
+                                                            `).join('')}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                                
+                                                <div class="col-md-6">
+                                                    <div class="growing-tips-section mb-4">
+                                                        <h6 class="text-info"><i class="fas fa-lightbulb"></i> Growing Tips</h6>
+                                                        <ul class="list-unstyled">
+                                                            ${crop.growing_tips.map(tip => `
+                                                                <li class="mb-2"><i class="fas fa-info-circle text-info me-2"></i> ${tip}</li>
+                                                            `).join('')}
+                                                        </ul>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="key-info-section mt-4">
+                                                <h6 class="text-primary"><i class="fas fa-clipboard-list"></i> Key Information</h6>
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="info-item mb-3">
+                                                            <strong><i class="fas fa-calendar-alt text-primary me-2"></i>Harvest Date:</strong>
+                                                            <p class="mb-0">${crop.harvest_date}</p>
+                                                        </div>
+                                                        <div class="info-item mb-3">
+                                                            <strong><i class="fas fa-clock text-primary me-2"></i>Duration:</strong>
+                                                            <p class="mb-0">${crop.duration_days} days</p>
+                                                        </div>
+                                                        ${crop.planting_season ? `
+                                                            <div class="info-item mb-3">
+                                                                <strong><i class="fas fa-seedling text-primary me-2"></i>Planting Season:</strong>
+                                                                <p class="mb-0">${crop.planting_season.join(', ')}</p>
+                                                            </div>
+                                                        ` : ''}
+                                                    </div>
+                                                    <div class="col-md-6">
+                                                        <div class="info-item mb-3">
+                                                            <strong><i class="fas fa-mountain text-primary me-2"></i>Soil Type:</strong>
+                                                            <p class="mb-0">${crop.soil_type}</p>
+                                                        </div>
+                                                        <div class="info-item mb-3">
+                                                            <strong><i class="fas fa-tint text-primary me-2"></i>Moisture Level:</strong>
+                                                            <p class="mb-0">${crop.moisture_level}</p>
+                                                        </div>
+                                                        ${crop.yield_per_hectare ? `
+                                                            <div class="info-item mb-3">
+                                                                <strong><i class="fas fa-chart-line text-primary me-2"></i>Expected Yield:</strong>
+                                                                <p class="mb-0">${crop.yield_per_hectare}</p>
+                                                            </div>
+                                                        ` : ''}
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="card-footer bg-light">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" name="selected_crops" value="${crop.crop}" id="crop${crop.crop}" checked>
+                                                <label class="form-check-label" for="crop${crop.crop}">
+                                                    <i class="fas fa-sync-alt text-success me-2"></i>Include in rotation schedule
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="text-center mt-4">
+                            <p class="text-muted mb-3">Select the crops you want to include in your rotation schedule</p>
+                            <button type="submit" class="btn btn-success btn-lg">
+                                <i class="fas fa-calendar-alt me-2"></i>Generate Rotation Schedule
+                            </button>
+                        </div>
+                    `;
+                } else {
+                    // Show no matches message
+                    resultsDiv.innerHTML = `
+                        <div class="alert alert-warning">
+                            <h4 class="alert-heading"><i class="fas fa-exclamation-triangle me-2"></i>No Matching Crops Found</h4>
+                            <p>We couldn't find any crops that match your current selection criteria. This could be because:</p>
+                            <ul>
+                                ${parseFloat(formData.get('ph')) < {{ min_ph }} || parseFloat(formData.get('ph')) > {{ max_ph }} ? 
+                                    `<li>The soil pH value (${formData.get('ph')}) is outside the optimal range for most crops</li>` : ''}
+                                ${formData.get('soil_type') && formData.get('moisture') ? 
+                                    `<li>The combination of ${formData.get('soil_type')} soil and ${formData.get('moisture')} moisture level might be too restrictive</li>` : ''}
+                                <li>The selected conditions might not be suitable for crop growth</li>
+                            </ul>
+                            <hr>
+                            <p class="mb-0">Please try adjusting your criteria:</p>
+                            <ul>
+                                ${parseFloat(formData.get('ph')) < {{ min_ph }} || parseFloat(formData.get('ph')) > {{ max_ph }} ? 
+                                    `<li>Try a different soil pH value within the recommended range ({{ min_ph }} - {{ max_ph }})</li>` : ''}
+                                ${formData.get('soil_type') ? `<li>Consider selecting a different soil type</li>` : ''}
+                                ${formData.get('moisture') ? `<li>Adjust the moisture level to match your actual conditions</li>` : ''}
+                            </ul>
+                            <div class="mt-3">
+                                <button type="button" class="btn btn-outline-success" onclick="document.querySelector('form').reset();">
+                                    <i class="fas fa-redo me-2"></i>Reset Form
+                                </button>
+                            </div>
+                        </div>
+                    `;
+                }
+            })
+            .catch(error => {
+                document.getElementById('results').innerHTML = `
+                    <div class="alert alert-danger">
+                        <h4 class="alert-heading">Error</h4>
+                        <p>An error occurred while generating recommendations. Please try again.</p>
+                    </div>
+                `;
+            });
+        });
+
+        // Maintain active tab after form submission
+        document.addEventListener('DOMContentLoaded', function() {
+            const hash = window.location.hash || '#generator';
+            const tab = document.querySelector(`a[href="${hash}"]`);
+            if (tab) {
+                document.querySelectorAll('.nav-link').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-pane').forEach(p => p.classList.remove('show', 'active'));
+                
+                tab.classList.add('active');
+                const tabPane = document.querySelector(tab.getAttribute('href'));
+                if (tabPane) {
+                    tabPane.classList.add('show', 'active');
+                }
+            }
+        });
+
+        // Update hash when tab changes
+        document.querySelectorAll('.nav-link').forEach(tab => {
+            tab.addEventListener('click', function(e) {
+                window.location.hash = this.getAttribute('href');
+            });
+        });
     </script>
 </body>
 </html>
