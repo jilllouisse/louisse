@@ -5,6 +5,7 @@ from datetime import datetime, timedelta
 from typing import List, Dict, Any, Optional
 from dataclasses import dataclass
 from pathlib import Path
+import os
 
 # Configure logging
 logging.basicConfig(
@@ -287,7 +288,7 @@ class CropManager:
 def create_app() -> Flask:
     """Create and configure the Flask application."""
     app = Flask(__name__)
-    app.secret_key = 'your-secret-key-here'  # TODO: Move to environment variable
+    app.config['SECRET_KEY'] = 'your-secret-key-here'
     
     # Initialize crop manager
     crop_manager = CropManager('negros_crops.json')
@@ -299,38 +300,46 @@ def create_app() -> Flask:
                 ph = float(request.form.get('ph', 0))
                 soil_type = request.form.get('soil_type', '')
                 moisture = request.form.get('moisture', '')
-                crop_type = request.form.get('crop_type', '')  # Get crop type from form
+                crop_type = request.form.get('crop_type', '')
                 
                 # Validate inputs
-                if not (crop_manager.min_ph <= ph <= crop_manager.max_ph):
-                    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                        return jsonify({'error': 'Invalid pH value'}), 400
-                    return render_template('index.html', error='Invalid pH value', min_ph=crop_manager.min_ph, max_ph=crop_manager.max_ph)
+                if not (6.0 <= ph <= 7.5):
+                    return jsonify({'error': 'Invalid pH value. Please enter a value between 6.0 and 7.5.'})
+                if not soil_type:
+                    return jsonify({'error': 'Please select a soil type.'})
+                if not moisture:
+                    return jsonify({'error': 'Please select a moisture level.'})
                 
-                if not soil_type or not moisture:
-                    if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                        return jsonify({'error': 'Please select both soil type and moisture level'}), 400
-                    return render_template('index.html', error='Please select both soil type and moisture level', min_ph=crop_manager.min_ph, max_ph=crop_manager.max_ph)
-                
-                # Find matching crops with crop type filter
+                # Find matching crops
                 matching_crops = crop_manager.find_matching_crops(ph, soil_type, moisture, crop_type)
                 
+                # Return JSON response for AJAX requests
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
                     return jsonify({'crops': matching_crops})
                 
-                return render_template('index.html', crops=matching_crops, min_ph=crop_manager.min_ph, max_ph=crop_manager.max_ph)
+                return render_template('index.html', 
+                                    crops=matching_crops,
+                                    min_ph=crop_manager.min_ph,
+                                    max_ph=crop_manager.max_ph,
+                                    crop_types=crop_manager.crop_types,
+                                    climate_zones=crop_manager.climate_zones)
                 
             except ValueError as e:
                 if request.headers.get('X-Requested-With') == 'XMLHttpRequest':
-                    return jsonify({'error': str(e)}), 400
-                return render_template('index.html', error=str(e), min_ph=crop_manager.min_ph, max_ph=crop_manager.max_ph)
+                    return jsonify({'error': str(e)})
+                flash(str(e), 'error')
+                return redirect(url_for('index'))
         
-        return render_template('index.html', min_ph=crop_manager.min_ph, max_ph=crop_manager.max_ph)
-
+        return render_template('index.html',
+                            min_ph=crop_manager.min_ph,
+                            max_ph=crop_manager.max_ph,
+                            crop_types=crop_manager.crop_types,
+                            climate_zones=crop_manager.climate_zones)
+    
     return app
 
 app = create_app()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
 
