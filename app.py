@@ -340,6 +340,10 @@ def create_app() -> Flask:
 
 app = create_app()
 
+# Get environment variables with defaults
+PORT = int(os.environ.get('PORT', 5000))
+DEBUG = os.environ.get('FLASK_ENV') == 'development'
+
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=int(os.environ.get('PORT', 5000)))
+    app.run(host='0.0.0.0', port=PORT, debug=DEBUG)
 

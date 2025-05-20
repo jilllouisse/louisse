@@ -3,7 +3,20 @@ services:
     name: philippine-crop-generator
     env: python
     buildCommand: pip install -r requirements.txt
-    startCommand: gunicorn app:app
+    startCommand: gunicorn app:app --workers 2 --threads 2 --timeout 120
     envVars:
       - key: PYTHON_VERSION
-        value: 3.9.0 
+        value: 3.11.0
+      - key: FLASK_ENV
+        value: production
+      - key: FLASK_APP
+        value: app.py
+      - key: GUNICORN_CMD_ARGS
+        value: "--workers=2 --threads=2 --timeout=120"
+    healthCheckPath: /
+    autoDeploy: true
+    plan: free
+    disk:
+      name: tmp
+      mountPath: /tmp
+      sizeGB: 1 
