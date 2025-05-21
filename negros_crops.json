@@ -1,17 +1,19 @@
 [
     {
-        "crop": "Rice (Palay)",
-        "pH_min": 5.5,
+        "crop": "Rice",
+        "pH_min": 6.0,
         "pH_max": 7.0,
         "soil_type": "clay",
         "moisture_level": "high",
         "duration_days": 120,
         "crop_type": "grain",
         "climate_zone": "tropical",
-        "planting_season": ["June", "July", "August"],
+        "yield_per_hectare": "4-6 tons",
+        "planting_season": ["June-July", "December-January"],
+        "pest_resistance": "moderate",
         "spacing": {
-            "between_plants": "20cm",
-            "between_rows": "30cm"
+            "between_plants": "20-25 cm",
+            "between_rows": "20-25 cm"
         },
         "fertilizer_needs": {
             "nitrogen": "high",
@@ -19,12 +21,10 @@
             "potassium": "medium"
         },
         "sunlight": "full",
-        "pest_resistance": "moderate",
-        "yield_per_hectare": "4-6 tons",
-        "water_requirement": "1000-1500mm/season"
+        "water_requirement": "1000-1500 mm/season"
     },
     {
-        "crop": "Corn (Mais)",
+        "crop": "Corn",
         "pH_min": 5.8,
         "pH_max": 7.0,
         "soil_type": "loamy",
@@ -32,10 +32,12 @@
         "duration_days": 90,
         "crop_type": "grain",
         "climate_zone": "tropical",
-        "planting_season": ["March", "April", "May"],
+        "yield_per_hectare": "5-7 tons",
+        "planting_season": ["April-May", "October-November"],
+        "pest_resistance": "moderate",
         "spacing": {
-            "between_plants": "25cm",
-            "between_rows": "75cm"
+            "between_plants": "25-30 cm",
+            "between_rows": "75-90 cm"
         },
         "fertilizer_needs": {
             "nitrogen": "high",
@@ -43,9 +45,79 @@
             "potassium": "medium"
         },
         "sunlight": "full",
-        "pest_resistance": "moderate",
-        "yield_per_hectare": "5-7 tons",
-        "water_requirement": "500-800mm/season"
+        "water_requirement": "500-800 mm/season"
+    },
+    {
+        "crop": "Mango",
+        "pH_min": 6.0,
+        "pH_max": 7.5,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 365,
+        "crop_type": "fruit",
+        "climate_zone": "tropical",
+        "yield_per_hectare": "10-15 tons",
+        "planting_season": ["Year-round"],
+        "pest_resistance": "high",
+        "spacing": {
+            "between_plants": "8-10 m",
+            "between_rows": "8-10 m"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "water_requirement": "1000-1500 mm/year"
+    },
+    {
+        "crop": "Tomato",
+        "pH_min": 6.0,
+        "pH_max": 6.8,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "yield_per_hectare": "25-30 tons",
+        "planting_season": ["October-December", "February-March"],
+        "pest_resistance": "low",
+        "spacing": {
+            "between_plants": "50-60 cm",
+            "between_rows": "80-100 cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "water_requirement": "600-800 mm/season"
+    },
+    {
+        "crop": "Cassava",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "sandy",
+        "moisture_level": "low",
+        "duration_days": 240,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "yield_per_hectare": "20-25 tons",
+        "planting_season": ["Year-round"],
+        "pest_resistance": "high",
+        "spacing": {
+            "between_plants": "1 m",
+            "between_rows": "1 m"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "water_requirement": "500-700 mm/season"
     },
     {
         "crop": "Mung Beans (Munggo)",
@@ -120,30 +192,6 @@
         "water_requirement": "500-700mm/year"
     },
     {
-        "crop": "Tomato (Kamatis)",
-        "pH_min": 6.0,
-        "pH_max": 7.0,
-        "soil_type": "loamy",
-        "moisture_level": "medium",
-        "duration_days": 90,
-        "crop_type": "vegetable",
-        "climate_zone": "tropical",
-        "planting_season": ["October", "November", "December"],
-        "spacing": {
-            "between_plants": "45cm",
-            "between_rows": "75cm"
-        },
-        "fertilizer_needs": {
-            "nitrogen": "high",
-            "phosphorus": "high",
-            "potassium": "high"
-        },
-        "sunlight": "full",
-        "pest_resistance": "moderate",
-        "yield_per_hectare": "20-25 tons",
-        "water_requirement": "600-800mm/season"
-    },
-    {
         "crop": "Eggplant (Talong)",
         "pH_min": 5.5,
         "pH_max": 6.5,
@@ -190,30 +238,6 @@
         "pest_resistance": "high",
         "yield_per_hectare": "20-25 tons",
         "water_requirement": "800-1000mm/season"
-    },
-    {
-        "crop": "Mango (Mangga)",
-        "pH_min": 5.5,
-        "pH_max": 7.5,
-        "soil_type": "loamy",
-        "moisture_level": "medium",
-        "duration_days": 365,
-        "crop_type": "fruit",
-        "climate_zone": "tropical",
-        "planting_season": ["May", "June", "July"],
-        "spacing": {
-            "between_plants": "8m",
-            "between_rows": "8m"
-        },
-        "fertilizer_needs": {
-            "nitrogen": "medium",
-            "phosphorus": "medium",
-            "potassium": "high"
-        },
-        "sunlight": "full",
-        "pest_resistance": "moderate",
-        "yield_per_hectare": "10-15 tons",
-        "water_requirement": "1000-1500mm/year"
     },
     {
         "crop": "Banana (Saging)",
@@ -478,5 +502,125 @@
         "pest_resistance": "moderate",
         "yield_per_hectare": "8-12 tons",
         "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Ampalaya (Bitter Gourd)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "50cm",
+            "between_rows": "100cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "8-12 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Pechay (Chinese Cabbage)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 30,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "20cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Mustasa (Mustard)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 30,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "15cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "12-15 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Gabi (Taro)",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "clay",
+        "moisture_level": "high",
+        "duration_days": 180,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "50cm",
+            "between_rows": "50cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "1000-1500mm/season"
+    },
+    {
+        "crop": "Ube (Purple Yam)",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 240,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "50cm",
+            "between_rows": "50cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "800-1200mm/season"
     }
 ]
