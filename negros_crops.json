@@ -622,5 +622,605 @@
         "pest_resistance": "high",
         "yield_per_hectare": "20-25 tons",
         "water_requirement": "800-1200mm/season"
+    },
+    {
+        "crop": "Ginger (Luya)",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 240,
+        "crop_type": "spice",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "800-1200mm/season"
+    },
+    {
+        "crop": "Turmeric (Luyang Dilaw)",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 240,
+        "crop_type": "spice",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "800-1200mm/season"
+    },
+    {
+        "crop": "Lemongrass (Tanglad)",
+        "pH_min": 5.5,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 90,
+        "crop_type": "herb",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "8-10 tons",
+        "water_requirement": "600-800mm/season"
+    },
+    {
+        "crop": "Malunggay (Moringa)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 365,
+        "crop_type": "tree",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "3m",
+            "between_rows": "3m"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "800-1200mm/year"
+    },
+    {
+        "crop": "Squash (Kalabasa)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 120,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "1m",
+            "between_rows": "2m"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "600-800mm/season"
+    },
+    {
+        "crop": "Cucumber (Pipino)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "60cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "medium",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Radish (Labanos)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 30,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "10cm",
+            "between_rows": "20cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Carrots (Karot)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "sandy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "10cm",
+            "between_rows": "20cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Lettuce (Letsugas)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 45,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "20cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Cauliflower (Koliplor)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["October", "November", "December"],
+        "spacing": {
+            "between_plants": "45cm",
+            "between_rows": "60cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "600-800mm/season"
+    },
+    {
+        "crop": "Broccoli (Brokuli)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["October", "November", "December"],
+        "spacing": {
+            "between_plants": "45cm",
+            "between_rows": "60cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "600-800mm/season"
+    },
+    {
+        "crop": "Celery (Kintsay)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "high",
+        "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "20cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "high"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "800-1000mm/season"
+    },
+    {
+        "crop": "Asparagus (Asparagus)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "sandy",
+        "moisture_level": "medium",
+        "duration_days": 730,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "90cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "5-7 tons",
+        "water_requirement": "800-1200mm/year"
+    },
+    {
+        "crop": "Artichoke (Artichoke)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 180,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "90cm",
+            "between_rows": "90cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "8-10 tons",
+        "water_requirement": "800-1200mm/season"
+    },
+    {
+        "crop": "Leek (Leek)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 120,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "15cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "600-800mm/season"
+    },
+    {
+        "crop": "Garlic (Bawang)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 120,
+        "crop_type": "spice",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "15cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "4-6 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Onion (Sibuyas)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 120,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "10cm",
+            "between_rows": "20cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Potato (Patatas)",
+        "pH_min": 5.5,
+        "pH_max": 6.5,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 120,
+        "crop_type": "root",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "60cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "medium",
+            "phosphorus": "high",
+            "potassium": "high"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Sweet Corn (Mais)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 90,
+        "crop_type": "vegetable",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "25cm",
+            "between_rows": "75cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "8-10 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Green Beans (Baguio Beans)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "legume",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "10cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "low",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "8-10 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Snow Peas (Snow Peas)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "legume",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "10cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "low",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "6-8 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Bok Choy (Pechay Baguio)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 45,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "20cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "400-600mm/season"
+    },
+    {
+        "crop": "Chinese Cabbage (Wombok)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "45cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "20-25 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Kale (Kale)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 60,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "30cm",
+            "between_rows": "45cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "full",
+        "pest_resistance": "high",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "500-700mm/season"
+    },
+    {
+        "crop": "Spinach (Spinach)",
+        "pH_min": 6.0,
+        "pH_max": 7.0,
+        "soil_type": "loamy",
+        "moisture_level": "medium",
+        "duration_days": 45,
+        "crop_type": "leafy",
+        "climate_zone": "tropical",
+        "planting_season": ["Year-round"],
+        "spacing": {
+            "between_plants": "15cm",
+            "between_rows": "30cm"
+        },
+        "fertilizer_needs": {
+            "nitrogen": "high",
+            "phosphorus": "medium",
+            "potassium": "medium"
+        },
+        "sunlight": "partial",
+        "pest_resistance": "moderate",
+        "yield_per_hectare": "15-20 tons",
+        "water_requirement": "400-600mm/season"
     }
 ]
